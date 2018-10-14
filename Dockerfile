@@ -58,7 +58,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 RUN apt-get clean
 
-#installing cartopy for maps
+#installing libs for cartopy maps
 
 RUN apt-get install -y --no-install-recommends libproj-dev proj-data proj-bin
 RUN apt-get install -y --no-install-recommends libgeos-dev
@@ -67,7 +67,7 @@ RUN apt-get install -y --no-install-recommends libgeos-dev
 #RUN pip install numpy
 #RUN pip install cython
 #RUN pip install cartopy
-#RUN apt-get clean
+RUN apt-get clean
 
 
 RUN conda create -y -n beakerx 'python>=3' nodejs pandas openjdk maven py4j
